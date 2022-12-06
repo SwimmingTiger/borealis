@@ -141,6 +141,20 @@ void Application::createWindow(std::string windowTitle)
     {
         NVGcontext* vg = Application::getNVGContext();
 
+        // Chinese
+        int chinese = Application::getFont(FONT_CHINESE_REGULAR);
+        if (chinese != FONT_INVALID)
+            nvgAddFallbackFontId(vg, regular, chinese);
+        else
+            Logger::warning("Switch Chinese font was not loaded, glyphs will not be displayed");
+
+        // Korean
+        int korean = Application::getFont(FONT_KOREAN_REGULAR);
+        if (korean != FONT_INVALID)
+            nvgAddFallbackFontId(vg, regular, korean);
+        else
+            Logger::warning("Switch Korean font was not loaded, glyphs will not be displayed");
+
         // Switch icons
         int switchIcons = Application::getFont(FONT_SWITCH_ICONS);
         if (switchIcons != FONT_INVALID)
