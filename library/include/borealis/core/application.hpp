@@ -68,6 +68,9 @@ class Application
      */
     static bool mainLoop();
 
+    static unsigned getWindowWidth();
+    static unsigned getWindowHeight();
+
     static Platform* getPlatform();
     static AudioPlayer* getAudioPlayer();
 

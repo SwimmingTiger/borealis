@@ -92,6 +92,14 @@ bool Application::init()
     return true;
 }
 
+unsigned Application::getWindowWidth() {
+    return windowWidth;
+}
+
+unsigned Application::getWindowHeight() {
+    return windowHeight;
+}
+
 void Application::createWindow(std::string windowTitle)
 {
     if (!Application::inited)
