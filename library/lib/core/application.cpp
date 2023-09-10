@@ -978,6 +978,11 @@ void Application::setSwapInputKeys(bool swap)
     getGlobalHintsUpdateEvent()->fire();
 }
 
+void Application::setSwapJoyconStickToDPad(bool swap)
+{
+    swapJoyconStickToDPad = swap;
+}
+
 NVGcontext* Application::getNVGContext()
 {
     return Application::platform->getVideoContext()->getNVGContext();

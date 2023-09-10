@@ -229,6 +229,13 @@ class Application
         return swapInputKeys;
     }
 
+    static void setSwapJoyconStickToDPad(bool swap);
+
+    inline static bool isSwapJoyconStickToDPad()
+    {
+        return swapJoyconStickToDPad;
+    }
+
     inline static void setDrawCoursor(bool draw)
     {
         drawCoursor = draw;
@@ -242,11 +249,12 @@ class Application
     static void tryDeinitFirstResponder(View* view);
 
   private:
-    inline static bool inited               = false;
-    inline static bool quitRequested        = false;
-    inline static bool debuggingViewEnabled = false;
-    inline static bool swapInputKeys        = false;
-    inline static bool drawCoursor          = false;
+    inline static bool inited                = false;
+    inline static bool quitRequested         = false;
+    inline static bool debuggingViewEnabled  = false;
+    inline static bool swapInputKeys         = false;
+    inline static bool swapJoyconStickToDPad = true;
+    inline static bool drawCoursor           = false;
 
     inline static Platform* platform = nullptr;
 
